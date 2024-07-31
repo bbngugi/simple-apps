@@ -11,14 +11,9 @@ const connection = require('./middleware/db_connect');
 
 //clear_bugs
 
-let express = require('express');
 
-let app1 = express();  // Compliant
-app1.disable("x-powered-by");
+app.disable("x-powered-by");
 
-let helmet = require("helmet");
-let app2 = express(); // Compliant
-app2.use(helmet.hidePoweredBy());
 
 // Dashboard
 app.use('/', express.static(path.join(__dirname, 'public')));
